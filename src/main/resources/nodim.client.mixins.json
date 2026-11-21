@@ -3,7 +3,8 @@
   "package": "com.nodim.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
-    "ScreenMixin"
+    "ScreenMixin",
+    "GuiGraphicsMixin"
   ],
   "injectors": {
     "defaultRequire": 1
