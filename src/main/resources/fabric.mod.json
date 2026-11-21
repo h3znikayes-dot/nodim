@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "nodim",
+  "version": "1.0.0",
+  "name": "No Dim",
+  "description": "Removes the dark background behind the inventory and other in-world screens.",
+  "environment": "client",
+  "mixins": [
+    {
+      "config": "nodim.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.20.1",
+    "minecraft": "26.3",
+    "java": ">=25"
+  }
+}
