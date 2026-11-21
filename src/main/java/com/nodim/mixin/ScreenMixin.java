@@ -15,6 +15,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  */
 @Mixin(Screen.class)
 public class ScreenMixin {
+    private static boolean nodim$logged = false;
+
     @Inject(
         method = { "renderTransparentBackground", "extractTransparentBackground" },
         at = @At("HEAD"),
@@ -22,6 +24,10 @@ public class ScreenMixin {
         require = 1
     )
     private void nodim$skipDim(CallbackInfo ci) {
+        if (!nodim$logged) {
+            nodim$logged = true;
+            System.out.println("[nodim] Screen background method was called and cancelled");
+        }
         ci.cancel();
     }
 }
